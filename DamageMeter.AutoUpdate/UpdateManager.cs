@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -17,7 +17,7 @@ namespace DamageMeter.AutoUpdate
     {
         private static Dictionary<string, string> _hashes;
         private static Dictionary<string, string> _latest;
-        public static string Version = "3.00b";
+        public static string Version = "3.00b-Evervyn";
 
         public static string ExecutableDirectory => Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 

@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+using System.Globalization;
+using System.Speech.Synthesis;
 
 namespace Data.Actions.Notify.SoundElements
 {
@@ -42,12 +43,14 @@ namespace Data.Actions.Notify.SoundElements
 
         public void Play()
         {
-            var synth = new SpeechLib.SpVoiceClass();
-            var voices = synth.GetVoices("", $"Gender={VoiceGender};Age={VoiceAge};Language={new CultureInfo(CultureInfo).LCID:X}");
-            synth.Voice = voices.Item(0);
-            synth.Volume = Volume;
-            synth.Rate = Rate;
-            synth.Speak(Text);
+            using (var synth = new SpeechSynthesizer())
+            {
+                synth.SelectVoiceByHints((System.Speech.Synthesis.VoiceGender)VoiceGender, (System.Speech.Synthesis.VoiceAge)VoiceAge, VoicePosition, new CultureInfo(CultureInfo));
+                synth.SetOutputToDefaultAudioDevice();
+                synth.Volume = Volume;
+                synth.Rate = Rate;
+                synth.Speak(Text);
+            }
         }
 
 #endif

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <AssemblyTitle>Tera.Data</AssemblyTitle>
     <Product>Tera.Data</Product>
@@ -9,14 +9,7 @@
     <TargetFrameworks>net8-windows;net7-windows;net5-windows;net6-windows;net471</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup Condition="$(TargetFramework.StartsWith('net5')) or $(TargetFramework.StartsWith('net6')) or $(TargetFramework.StartsWith('net7')) or $(TargetFramework.StartsWith('net8'))">
-    <COMReference Include="SpeechLib.dll">
-      <Guid>c866ca3a-32f7-11d2-9602-00c04f8ee628</Guid>
-      <VersionMajor>5</VersionMajor>
-      <VersionMinor>4</VersionMinor>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Lcid>0</Lcid>
-      <Isolated>false</Isolated>
-    </COMReference>
+    <PackageReference Include="System.Speech" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4'))">
     <Reference Include="System.Speech" />

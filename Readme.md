@@ -1,3 +1,8 @@
+Shinra Meter (Evervyn Fork)
+============================
+
+**This is a fork of ShinraMeter that applies a bandaid fix for compatibility with the Evervyn server.**
+
 Shinra Meter
 ==============
 

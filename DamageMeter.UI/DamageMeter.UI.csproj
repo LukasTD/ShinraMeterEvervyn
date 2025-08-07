@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<OutputType>WinExe</OutputType>
 		<AssemblyName>ShinraMeter</AssemblyName>
@@ -32,7 +32,7 @@
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
 	</PropertyGroup>
-	<PropertyGroup Condition="$(TargetFramework.StartsWith('net6'))">
+	<PropertyGroup Condition="$(TargetFramework.StartsWith('net5')) or $(TargetFramework.StartsWith('net6')) or $(TargetFramework.StartsWith('net7')) or $(TargetFramework.StartsWith('net8'))">
 		<ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
 	</PropertyGroup>
 	<ItemGroup Condition="$(TargetFramework.StartsWith('net5'))">
